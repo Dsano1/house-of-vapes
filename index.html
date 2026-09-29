@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>House of Vapes Convenience &amp; Smoke — Riverdale, UT</title>
+  <meta name="description" content="Cold drinks, premium glass, hookah &amp; shisha, disposables, CBD, cigars and convenience at 1063 W Riverdale Rd in The Family Center at Riverdale, UT. Open 8 AM–9 PM Mon–Wed, 8 AM–10 PM Thu–Sat, 10 AM–8 PM Sun. 21+ with valid ID.">
+  <meta name="theme-color" content="#000000">
+  <script>
+    // Restore the age gate answer before first paint so a returning adult never sees the site flash.
+    try { if (sessionStorage.getItem("hov-age") === "21") document.documentElement.classList.add("age-ok"); } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ 21+ AGE GATE ============ -->
+  <div class="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title" aria-describedby="gate-desc">
+    <div class="gate__trim" aria-hidden="true"></div>
+    <div class="gate__card">
+      <p class="gate__brand">House of Vapes Convenience &amp; Smoke, Riverdale</p>
+      <h1 class="gate__title" id="gate-title">Are you 21 or older?</h1>
+      <p class="gate__desc" id="gate-desc">This site is for adults 21 and over. We check a valid ID on every purchase and pickup.</p>
+      <div class="gate__actions">
+        <button class="btn btn--primary" type="button" data-age="yes">Yes, I'm 21 or older</button>
+        <button class="btn btn--ghost" type="button" data-age="no">No, take me back</button>
+      </div>
+      <noscript><p class="gate__desc">Turn on JavaScript to confirm your age and enter.</p></noscript>
+    </div>
+  </div>
+
+  <div class="site">
+
+    <a class="skip" href="#featured">Skip to products</a>
+
+    <!-- ============ TOP BAR ============ -->
+    <header class="topbar" id="topbar">
+      <a class="topbar__brand" href="#top" aria-label="House of Vapes Riverdale, back to top">House of Vapes</a>
+      <a class="status" href="#hours" data-status>
+        <span class="status__dot" aria-hidden="true"></span>
+        <span data-status-text>Checking hours</span>
+      </a>
+      <a class="topbar__call" href="tel:+18018703274">Call</a>
+    </header>
+
+    <main>
+
+      <!-- ============ HERO: scroll scrubs a walk through the shop ============ -->
+      <section class="hero" id="top" aria-label="House of Vapes Riverdale">
+        <div class="hero__stage">
+          <canvas class="hero__canvas" aria-hidden="true"></canvas>
+          <img class="hero__poster" src="assets/posters/hero.jpg" alt="A lit cigar resting in a smoke dish on the glass display counter, under the shop's hexagon ceiling lights" decoding="async" fetchpriority="high">
+          <video class="hero__idle" muted loop playsinline preload="auto" poster="assets/posters/hero.jpg" data-src="assets/videos/e779814d08514087b856b55e41eed212.mp4" aria-hidden="true" tabindex="-1"></video>
+          <div class="hero__shade" aria-hidden="true"></div>
+          <div class="hero__content">
+            <p class="hero__trust"><span aria-hidden="true">★</span> 5.0 on Google</p>
+            <h1 class="hero__title">
+              <span class="hero__name">House of Vapes</span>
+              <span class="hero__city">Riverdale</span>
+            </h1>
+            <p class="hero__tagline">Cold drinks, great flavors, and good vibes all in one place.</p>
+            <a class="status status--lg" href="#hours" data-status>
+              <span class="status__dot" aria-hidden="true"></span>
+              <span data-status-text>Checking hours</span>
+            </a>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="https://maps.app.goo.gl/vZptxLZu7yx2hdyWA" target="_blank" rel="noopener">Get Directions</a>
+              <a class="btn btn--ghost" href="tel:+18018703274">Call (801) 870-3274</a>
+            </div>
+          </div>
+          <button class="hero__cue" type="button" data-scroll-cue aria-label="Scroll down to follow the smoke up and see store hours">
+            <span class="hero__cue-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg>
+            </span>
+            <span class="hero__cue-text">Swipe up to follow the smoke</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ============ CATEGORY MARQUEE ============ -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Cold drinks</span><span>Premium glassware</span><span>Hookahs &amp; shisha</span><span>Disposables &amp; e-liquids</span><span>CBD</span><span>Cigars &amp; tobacco</span><span>Incense &amp; charcoal</span><span>Mushroom coffee &amp; wellness</span><span>Snacks &amp; convenience</span>
+          <span>Cold drinks</span><span>Premium glassware</span><span>Hookahs &amp; shisha</span><span>Disposables &amp; e-liquids</span><span>CBD</span><span>Cigars &amp; tobacco</span><span>Incense &amp; charcoal</span><span>Mushroom coffee &amp; wellness</span><span>Snacks &amp; convenience</span>
+        </div>
+      </div>
+
+      <!-- ============ COLD DRINKS BAND ============ -->
+      <section class="drinks" id="drinks" aria-labelledby="drinks-title">
+        <div class="scales" aria-hidden="true"></div>
+        <figure class="drinks__photo">
+          <img src="assets/photos/cooler.jpg" alt="The cold drink coolers inside House of Vapes Riverdale" loading="lazy" decoding="async">
+        </figure>
+        <div class="drinks__content">
+          <h2 class="display drinks__title" id="drinks-title">Grab yours today.</h2>
+          <p class="drinks__copy">The coolers are stocked with energy drinks, sodas and water. Everything's ice cold and ready to go.</p>
+          <button class="btn btn--primary" type="button" data-reserve data-item="Cold drinks" data-variant="4-pack">Reserve a 4-pack</button>
+          <p class="fineprint">Prices in store. Pay at pickup, ID checked.</p>
+        </div>
+      </section>
+
+      <!-- ============ FEATURED: three spin cards ============ -->
+      <section class="featured" id="featured" aria-labelledby="featured-title">
+        <div class="section-head">
+          <h2 class="display" id="featured-title">Spin it before you drive over</h2>
+          <p class="section-head__note">Each piece turns a full 360° as you scroll past. Prices are in store, and you can hold anything for pickup.</p>
+        </div>
+
+        <div class="products">
+          <article class="product" data-product="Glass">
+            <div class="product__media" role="img" aria-label="360° view of hand-blown glass">
+              <video muted loop playsinline preload="none" poster="assets/posters/spin-glass.jpg" data-src="assets/videos/824be2f0b19944d8aee488c866480507.mp4" aria-hidden="true" tabindex="-1"></video>
+            </div>
+            <div class="product__body">
+              <div class="product__head">
+                <h3 class="product__name">Glass</h3>
+                <span class="tag">Prices in store</span>
+              </div>
+              <p class="product__desc">Hand-blown water pipes, bubblers and hand pipes, from everyday pieces to heavy color work.</p>
+              <fieldset class="variant">
+                <legend>Type</legend>
+                <label><input type="radio" name="v-glass" value="Hand pipe" checked><span>Hand pipe</span></label>
+                <label><input type="radio" name="v-glass" value="Bubbler"><span>Bubbler</span></label>
+                <label><input type="radio" name="v-glass" value="Water pipe"><span>Water pipe</span></label>
+              </fieldset>
+              <button class="btn btn--primary btn--block" type="button" data-reserve>Reserve for Pickup</button>
+            </div>
+          </article>
+
+          <article class="product" data-product="Hookah &amp; Shisha">
+            <div class="product__media" role="img" aria-label="360° view of a chrome-and-glass hookah">
+              <video muted loop playsinline preload="none" poster="assets/posters/spin-hookah.jpg" data-src="assets/videos/bb5a55661c31472f8e0114c7e9f4c3d4.mp4" aria-hidden="true" tabindex="-1"></video>
+            </div>
+            <div class="product__body">
+              <div class="product__head">
+                <h3 class="product__name">Hookah &amp; Shisha</h3>
+                <span class="tag">Prices in store</span>
+              </div>
+              <p class="product__desc">Chrome, glass and stainless hookahs, plus shisha, hoses, bowls and charcoal to go with them.</p>
+              <fieldset class="variant">
+                <legend>Size</legend>
+                <label><input type="radio" name="v-hookah" value="Compact" checked><span>Compact</span></label>
+                <label><input type="radio" name="v-hookah" value="Classic"><span>Classic</span></label>
+                <label><input type="radio" name="v-hookah" value="Tall"><span>Tall</span></label>
+              </fieldset>
+              <button class="btn btn--primary btn--block" type="button" data-reserve>Reserve for Pickup</button>
+            </div>
+          </article>
+
+          <article class="product" data-product="Cold Drinks">
+            <div class="product__media" role="img" aria-label="360° view of a chilled can">
+              <video muted loop playsinline preload="none" poster="assets/posters/spin-can.jpg" data-src="assets/videos/e9a3d6e599d1429f80662699422d9b83.mp4" aria-hidden="true" tabindex="-1"></video>
+            </div>
+            <div class="product__body">
+              <div class="product__head">
+                <h3 class="product__name">Cold Drinks</h3>
+                <span class="tag">Prices in store</span>
+              </div>
+              <p class="product__desc">Energy drinks, sodas and water, all kept ice cold by the front door.</p>
+              <fieldset class="variant">
+                <legend>Quantity</legend>
+                <label><input type="radio" name="v-drinks" value="Single can" checked><span>Single</span></label>
+                <label><input type="radio" name="v-drinks" value="4-pack"><span>4-pack</span></label>
+                <label><input type="radio" name="v-drinks" value="12-pack"><span>12-pack</span></label>
+              </fieldset>
+              <button class="btn btn--primary btn--block" type="button" data-reserve>Reserve for Pickup</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ EVERYTHING ELSE ============ -->
+      <section class="shelves" id="categories" aria-labelledby="shelves-title">
+        <div class="section-head">
+          <h2 class="display" id="shelves-title">Everything else on the shelves</h2>
+          <p class="section-head__note">One stop for the night. Ask the counter about anything you don't see here.</p>
+        </div>
+        <ul class="shelves__grid">
+          <li class="shelf">
+            <svg class="shelf__icon" viewBox="0 0 40 40" aria-hidden="true"><rect x="14" y="10" width="12" height="26" rx="3"/><path d="M17 10V6h6v4M18 4h4"/><path d="M14 21h12"/></svg>
+            <h3>Disposables &amp; E-Liquids</h3>
+            <p>Disposables, pods and bottled e-liquid in a wide range of flavors and strengths.</p>
+          </li>
+          <li class="shelf">
+            <svg class="shelf__icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 36V18"/><path d="M20 18c0-7 4-12 4-12s4 6 0 12M20 18c0-7-4-12-4-12s-4 6 0 12"/><path d="M20 22c5-4 12-3 12-3s-3 6-12 3M20 22c-5-4-12-3-12-3s3 6 12 3"/></svg>
+            <h3>CBD</h3>
+            <p>Tinctures, gummies and topicals. Ask what fits your routine.</p>
+          </li>
+          <li class="shelf">
+            <svg class="shelf__icon" viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="16" width="30" height="8" rx="4"/><path d="M34 18v4l3-2z"/><path d="M8 20h4M14 20h4"/></svg>
+            <h3>Cigars &amp; Tobacco</h3>
+            <p>Premium cigars, cutters, lighters, rolling papers and pipe tobacco.</p>
+          </li>
+          <li class="shelf">
+            <svg class="shelf__icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M12 36h16"/><path d="M20 36V14"/><path d="M20 10c-2-2 2-4 0-6M24 11c-2-2 2-4 0-6"/><rect x="8" y="30" width="24" height="6" rx="1"/></svg>
+            <h3>Incense &amp; Charcoal</h3>
+            <p>Sticks, cones, resin and quick-light hookah charcoal.</p>
+          </li>
+          <li class="shelf">
+            <svg class="shelf__icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M9 18h20v10a8 8 0 0 1-8 8h-4a8 8 0 0 1-8-8z"/><path d="M29 21h3a3 3 0 0 1 0 6h-3"/><path d="M12 14c0-4 3.5-7 7-7s7 3 7 7z"/><path d="M19 14v4"/></svg>
+            <h3>Mushroom Coffee &amp; Wellness</h3>
+            <p>Functional mushroom coffee, teas and daily wellness picks.</p>
+          </li>
+          <li class="shelf">
+            <svg class="shelf__icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M11 12h18l-2 24H13z"/><path d="M15 12V9a5 5 0 0 1 10 0v3"/><path d="M12 20h16"/></svg>
+            <h3>Snacks &amp; Convenience</h3>
+            <p>Chips, candy, ice, lighters, phone chargers and the basics you forgot.</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ============ TRUST MARQUEE + MANIFESTO ============ -->
+      <div class="marquee marquee--reverse" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Spotless store</span><span>Friendly staff</span><span>Easy to browse</span><span>Big selection</span><span>Good prices</span><span>Open late</span><span>21+ with ID</span>
+          <span>Spotless store</span><span>Friendly staff</span><span>Easy to browse</span><span>Big selection</span><span>Good prices</span><span>Open late</span><span>21+ with ID</span>
+        </div>
+      </div>
+
+      <section class="manifesto" aria-labelledby="manifesto-title">
+        <video class="manifesto__video" muted loop playsinline preload="none" poster="assets/posters/macro.jpg" data-src="assets/videos/ab1fd5a2a1204712afebcd31b3760124.mp4" aria-hidden="true" tabindex="-1"></video>
+        <div class="manifesto__shade" aria-hidden="true"></div>
+        <div class="manifesto__content">
+          <h2 class="manifesto__title" id="manifesto-title">
+            <span>Spotless shop.</span>
+            <span>Real advice.</span>
+            <span>Good vibes.</span>
+          </h2>
+          <p class="manifesto__body">Every review says the same thing: the store is brand new and clean, the people behind the counter know their stuff, and the layout makes it easy to find what you came for. Ask about anything and you'll get a straight answer.</p>
+        </div>
+      </section>
+
+      <!-- ============ GALLERY ============ -->
+      <section class="gallery" id="inside" aria-labelledby="gallery-title">
+        <div class="section-head">
+          <h2 class="display" id="gallery-title">Inside the shop</h2>
+          <p class="section-head__note">Bright, brand new and easy to browse.</p>
+        </div>
+        <div class="gallery__grid">
+          <figure class="gallery__item">
+            <img src="assets/photos/interior.jpg" alt="The shop floor under hexagon ceiling lights, with coolers on the left and the snack aisle on the right" loading="lazy" decoding="async">
+          </figure>
+          <figure class="gallery__item">
+            <img src="assets/photos/counter.jpg" alt="Glass display counters in front of the black slat wall of devices and accessories" loading="lazy" decoding="async">
+          </figure>
+          <figure class="gallery__item">
+            <img src="assets/photos/snacks.jpg" alt="Green-edged shelves stacked with chips and snacks" loading="lazy" decoding="async">
+          </figure>
+          <figure class="gallery__item">
+            <img src="assets/photos/cooler.jpg" alt="The drink coolers, soda fountain and slushie machines" loading="lazy" decoding="async">
+          </figure>
+          <figure class="gallery__item">
+            <img src="assets/photos/fresh.jpg" alt="The fresh selections cooler and frozen pantry freezer" loading="lazy" decoding="async">
+          </figure>
+        </div>
+      </section>
+
+      <!-- ============ REVIEWS ============ -->
+      <section class="reviews" id="reviews" aria-labelledby="reviews-title">
+        <div class="section-head section-head--row">
+          <div>
+            <h2 class="display" id="reviews-title">5.0 on Google</h2>
+            <p class="section-head__note">11 reviews, every one of them five stars.</p>
+          </div>
+          <a class="link" href="https://maps.app.goo.gl/vZptxLZu7yx2hdyWA" target="_blank" rel="noopener">Read all reviews on Google</a>
+        </div>
+        <div class="rotator" role="region" aria-roledescription="carousel" aria-label="Google reviews" data-rotator>
+          <ul class="rotator__slides">
+            <li class="review is-active" role="group" aria-roledescription="review" aria-label="1 of 6">
+              <p class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="#stars"/></svg></p>
+              <blockquote class="review__quote"><p>Great clean shop. Excellent customer service. 1000/10 would recommend.</p></blockquote>
+              <p class="review__name">Dujon S. <span class="review__source">on Google</span></p>
+            </li>
+            <li class="review" role="group" aria-roledescription="review" aria-label="2 of 6" aria-hidden="true">
+              <p class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="#stars"/></svg></p>
+              <blockquote class="review__quote"><p>One of the best smoke shop i ever been into. Really beautiful and clean store.</p></blockquote>
+              <p class="review__name">Billal M. <span class="review__source">on Google</span></p>
+            </li>
+            <li class="review" role="group" aria-roledescription="review" aria-label="3 of 6" aria-hidden="true">
+              <p class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="#stars"/></svg></p>
+              <blockquote class="review__quote"><p>Such a friendly, helpful staff. Very clean shop too! T'was a five star experience.</p></blockquote>
+              <p class="review__name">Cam M. <span class="review__source">on Google</span></p>
+            </li>
+            <li class="review" role="group" aria-roledescription="review" aria-label="4 of 6" aria-hidden="true">
+              <p class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="#stars"/></svg></p>
+              <blockquote class="review__quote"><p>They've got everything I needed and they have some of the best prices around.</p></blockquote>
+              <p class="review__name">Rylee B. <span class="review__source">on Google</span></p>
+            </li>
+            <li class="review" role="group" aria-roledescription="review" aria-label="5 of 6" aria-hidden="true">
+              <p class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="#stars"/></svg></p>
+              <blockquote class="review__quote"><p>Warmest, kindest atmosphere. If you need ANYTHING let them know, they are happy to assist.</p></blockquote>
+              <p class="review__name">Jacee M. <span class="review__source">on Google</span></p>
+            </li>
+            <li class="review" role="group" aria-roledescription="review" aria-label="6 of 6" aria-hidden="true">
+              <p class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="#stars"/></svg></p>
+              <blockquote class="review__quote"><p>The layout is very convenient and easy to browse with a lot of your needs in 1 place. Solid spot, my new go to.</p></blockquote>
+              <p class="review__name">CJ T. <span class="review__source">on Google</span></p>
+            </li>
+          </ul>
+          <div class="rotator__nav">
+            <button class="rotator__btn" type="button" data-rotator-prev aria-label="Previous review">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+            </button>
+            <ol class="rotator__dots" aria-label="Choose review"></ol>
+            <button class="rotator__btn" type="button" data-rotator-next aria-label="Next review">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+            <button class="rotator__btn rotator__btn--pause" type="button" data-rotator-pause aria-label="Pause autoplay">
+              <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg>
+              <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SMS DEALS ============ -->
+      <section class="signup" aria-labelledby="signup-title">
+        <div class="signup__card">
+          <h2 class="display display--sm" id="signup-title">Text me deals</h2>
+          <p class="signup__copy">New glass drops, restocks and in-store specials. A few texts a month, and you can stop anytime.</p>
+          <form class="signup__form" novalidate data-form="signup">
+            <label class="field">
+              <span class="field__label">Mobile number</span>
+              <input type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="(801) 555-0123" maxlength="20" required>
+            </label>
+            <div class="hp" aria-hidden="true">
+              <label>Company <input type="text" name="company" tabindex="-1" autocomplete="off"></label>
+            </div>
+            <label class="check">
+              <input type="checkbox" name="age21" required>
+              <span>I'm 21 or older.</span>
+            </label>
+            <label class="check check--consent">
+              <input type="checkbox" name="consent" required>
+              <span data-consent-text>I agree to receive recurring marketing calls and text messages from House of Vapes Convenience &amp; Smoke Riverdale at the number above, including messages sent by automated means. Consent is not a condition of any purchase. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help.</span>
+            </label>
+            <p class="fineprint">See our <a class="link" href="privacy.html">Privacy Policy</a> and <a class="link" href="terms.html">Terms</a>.</p>
+            <p class="form-error" role="alert" hidden></p>
+            <button class="btn btn--primary" type="submit">Text me deals</button>
+            <p class="form-done" role="status" hidden></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER / VISIT ============ -->
+    <footer class="footer" id="visit">
+      <div class="scales" aria-hidden="true"></div>
+      <div class="footer__grid">
+        <div class="footer__block">
+          <h2 class="display display--sm">Visit</h2>
+          <address>
+            House of Vapes Convenience &amp; Smoke<br>
+            1063 W Riverdale Rd<br>
+            Riverdale, UT 84405
+          </address>
+          <p class="muted">Inside The Family Center at Riverdale, next to Five Below and Best Buy, across from Home Depot.</p>
+          <p><a class="link" href="tel:+18018703274">(801) 870-3274</a></p>
+          <p><a class="link" href="https://maps.app.goo.gl/vZptxLZu7yx2hdyWA" target="_blank" rel="noopener">Get Directions</a></p>
+          <ul class="badges" aria-label="Good to know">
+            <li class="badge">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M11 7v6h5l3 6M11 13a5 5 0 1 0 5 6"/></svg>
+              Wheelchair accessible
+            </li>
+            <li class="badge">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg>
+              LGBTQ+ friendly
+            </li>
+            <li class="badge">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="12" r="2.5"/><path d="M14 10h4M14 14h4"/></svg>
+              21+ with valid ID
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__block" id="hours">
+          <h2 class="display display--sm">Hours</h2>
+          <table class="hours">
+            <caption class="muted">Mountain Time</caption>
+            <tbody>
+              <tr data-day="1"><th scope="row">Monday</th><td>8 AM – 9 PM</td></tr>
+              <tr data-day="2"><th scope="row">Tuesday</th><td>8 AM – 9 PM</td></tr>
+              <tr data-day="3"><th scope="row">Wednesday</th><td>8 AM – 9 PM</td></tr>
+              <tr data-day="4"><th scope="row">Thursday</th><td>8 AM – 10 PM</td></tr>
+              <tr data-day="5"><th scope="row">Friday</th><td>8 AM – 10 PM</td></tr>
+              <tr data-day="6"><th scope="row">Saturday</th><td>8 AM – 10 PM</td></tr>
+              <tr data-day="0"><th scope="row">Sunday</th><td>10 AM – 8 PM</td></tr>
+            </tbody>
+          </table>
+          <a class="status" href="#hours" data-status>
+            <span class="status__dot" aria-hidden="true"></span>
+            <span data-status-text>Checking hours</span>
+          </a>
+        </div>
+
+        <div class="footer__map">
+          <iframe title="Map to House of Vapes Riverdale, 1063 W Riverdale Rd"
+                  src="https://maps.google.com/maps?q=House%20of%20Vapes%20Convenience%20%26%20Smoke%2C%201063%20W%20Riverdale%20Rd%2C%20Riverdale%2C%20UT%2084405&amp;z=15&amp;output=embed"
+                  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <p class="warning">WARNING: This product contains nicotine. Nicotine is an addictive chemical.</p>
+
+      <div class="footer__legal">
+        <p><strong>21+ only.</strong> Valid government ID required for every purchase and pickup. We don't sell or ship nicotine, vape or wellness products online.</p>
+        <p class="muted">&copy; <span data-year>2026</span> House of Vapes Convenience &amp; Smoke, Riverdale.</p>
+        <ul class="legal-links">
+          <li><a class="link" href="privacy.html">Privacy Policy</a></li>
+          <li><a class="link" href="terms.html">Terms</a></li>
+          <li><a class="link" href="privacy.html#do-not-sell">Do Not Sell or Share My Personal Information</a></li>
+          <li><a class="link" href="privacy.html#request">Request or delete your data</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- ============ STICKY MOBILE DOCK ============ -->
+    <nav class="dock" aria-label="Quick actions">
+      <a class="dock__btn" href="tel:+18018703274">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        Call
+      </a>
+      <a class="dock__btn dock__btn--primary" href="https://maps.app.goo.gl/vZptxLZu7yx2hdyWA" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+        Directions
+      </a>
+      <a class="dock__btn" href="#hours">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm.5-13H11v6l5.2 3.1.8-1.3-4.5-2.7z"/></svg>
+        Hours
+      </a>
+    </nav>
+
+    <!-- ============ RESERVE DRAWER (demo: not connected to the shop yet) ============ -->
+    <dialog class="sheet" id="reserve" aria-labelledby="reserve-title">
+      <form class="sheet__form" novalidate data-form="reserve">
+        <div class="sheet__head">
+          <h2 class="display display--sm" id="reserve-title">Reserve for In-Store Pickup</h2>
+          <button class="sheet__close" type="button" data-close aria-label="Close">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+          </button>
+        </div>
+
+        <div class="sheet__step" data-step="form">
+          <p class="sheet__item"><span class="muted">Holding</span> <strong data-item></strong></p>
+          <label class="field">
+            <span class="field__label">Name</span>
+            <input type="text" name="name" autocomplete="name" minlength="2" maxlength="60" required>
+          </label>
+          <label class="field">
+            <span class="field__label">Phone</span>
+            <input type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="(801) 555-0123" maxlength="20" required>
+          </label>
+          <label class="field">
+            <span class="field__label">Pickup time</span>
+            <select name="time" required></select>
+          </label>
+          <div class="hp" aria-hidden="true">
+            <label>Company <input type="text" name="company" tabindex="-1" autocomplete="off"></label>
+          </div>
+          <label class="check check--consent">
+            <input type="checkbox" name="consent" required>
+            <span data-consent-text>I agree that House of Vapes Convenience &amp; Smoke Riverdale may call or text me at this number about this pickup only, including by automated means. This is not marketing consent. Message and data rates may apply. Reply STOP to opt out.</span>
+          </label>
+          <p class="sheet__note">Pay in store. We check a valid ID at pickup and you must be 21 or older. Nothing is sold or shipped online. See our <a class="link" href="privacy.html">Privacy Policy</a> and <a class="link" href="terms.html">Terms</a>.</p>
+          <p class="form-error" role="alert" hidden></p>
+          <button class="btn btn--primary btn--block" type="submit">Reserve for In-Store Pickup</button>
+        </div>
+
+        <div class="sheet__step" data-step="done" hidden>
+          <p class="sheet__done-title" data-done-title></p>
+          <p data-done-body></p>
+          <button class="btn btn--ghost btn--block" type="button" data-close>Done</button>
+        </div>
+
+        <p class="sheet__demo">Preview build: reservations aren't sent to the shop yet. Call (801) 870-3274 to hold an item today.</p>
+      </form>
+    </dialog>
+  </div>
+
+  <svg class="svg-defs" width="0" height="0" aria-hidden="true">
+    <defs>
+      <g id="stars">
+        <path d="M9 0l2.6 5.6 6.1.7-4.5 4.2 1.2 6L9 13.5 3.6 16.5l1.2-6L.3 6.3l6.1-.7z"/>
+        <path transform="translate(20.5 0)" d="M9 0l2.6 5.6 6.1.7-4.5 4.2 1.2 6L9 13.5 3.6 16.5l1.2-6L.3 6.3l6.1-.7z"/>
+        <path transform="translate(41 0)" d="M9 0l2.6 5.6 6.1.7-4.5 4.2 1.2 6L9 13.5 3.6 16.5l1.2-6L.3 6.3l6.1-.7z"/>
+        <path transform="translate(61.5 0)" d="M9 0l2.6 5.6 6.1.7-4.5 4.2 1.2 6L9 13.5 3.6 16.5l1.2-6L.3 6.3l6.1-.7z"/>
+        <path transform="translate(82 0)" d="M9 0l2.6 5.6 6.1.7-4.5 4.2 1.2 6L9 13.5 3.6 16.5l1.2-6L.3 6.3l6.1-.7z"/>
+      </g>
+    </defs>
+  </svg>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
