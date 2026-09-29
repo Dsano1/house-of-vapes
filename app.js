@@ -143,7 +143,7 @@
     // Scroll cue: clicking glides through the whole scene; any visitor input stops the glide.
     const cue = hero.querySelector("[data-scroll-cue]");
     let glide = 0;
-    const stopGlide = () => { if (glide) { cancelAnimationFrame(glide); glide = 0; } };
+    const stopGlide = () => { if (glide) { cancelAnimationFrame(glide); glide = 0; hero.classList.remove("is-scrolling"); } };
     cue.addEventListener("click", () => {
       stopGlide();
       const from = scrollY;
@@ -157,6 +157,7 @@
         if (x < 1) glide = requestAnimationFrame(step);
         else stopGlide();
       };
+      hero.classList.add("is-scrolling");
       glide = requestAnimationFrame(step);
     });
     ["wheel", "touchstart", "keydown"].forEach((t) => addEventListener(t, stopGlide, { passive: true }));

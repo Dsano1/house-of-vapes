@@ -24,6 +24,7 @@
   --gutter: clamp(16px, 4vw, 56px);
   --max: 1360px;
   --topbar-h: 56px;
+  --dock-h: 0px;
   color-scheme: dark;
 }
 
@@ -174,66 +175,103 @@ html:not(.age-ok) body { overflow: hidden; }
 .topbar__call:hover { color: var(--green); }
 
 /* ---------- Hero ---------- */
-.hero { position: relative; }
-.hero__stage {
-  position: sticky; top: 0; height: 100vh; height: 100svh; overflow: clip;
-}
-.hero__canvas, .hero__poster, .hero__idle {
+.hero { position: relative; height: 340vh; background: var(--black); }
+.hero__stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
+.hero__canvas, .hero__poster {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
 }
-.hero__poster { opacity: 1; }
-.hero.is-frames .hero__poster { opacity: 0; }
-.hero__idle { opacity: 0; }
-.hero.has-idle .hero__idle { opacity: 1; }
-.hero.is-revealed .hero__idle, .hero.has-idle.is-frames .hero__idle { opacity: 0; }
-.hero__canvas { opacity: 0; }
-.hero.has-frames .hero__canvas { opacity: 1; }
-
-.hero { height: 260vh; }
+.hero__poster { transition: opacity .4s; }
+.hero.has-frames .hero__poster { opacity: 0; }
+/* Idle loop sits over the canvas at the top of the page and fades out in the first few percent
+   of scroll, handing off to the scroll-scrubbed frames underneath. */
+.hero__idle {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: clamp(0, calc(1 - var(--p, 0) * 25), 1);
+  pointer-events: none;
+}
+.hero:not(.has-idle) .hero__idle { visibility: hidden; }
 .hero__shade {
   position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.12) 30%, rgba(0,0,0,.68) 100%);
+  /* Darkens with scroll so the copy reads once it appears over the ceiling lights. */
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0) 55%, rgba(0,0,0,.7) 100%);
+  opacity: calc(0.35 + var(--t, 0) * 0.65);
 }
-.hero__shade::after {
-  content: ""; position: absolute; inset: 0;
-  background: var(--black);
-  opacity: calc(var(--p, 0) * 1.15);
-  transition: opacity .2s linear;
-}
-.hero.is-revealed .hero__shade::after { opacity: 0; }
 .hero__content {
-  position: absolute; inset: 0;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; padding: var(--gutter);
-  opacity: 0; pointer-events: none; transition: opacity .4s ease;
+  position: absolute; left: var(--gutter); right: var(--gutter); bottom: max(9vh, 64px);
+  max-width: var(--max); margin: 0 auto;
+  /* --p is scroll progress (0→1) through the hero. The scene opens with no copy on the cigar;
+     as the camera follows the smoke to the ceiling (--t, the last 40% of the scroll) the copy
+     condenses out of the haze. */
+  --t: clamp(0, calc((var(--p, 0) - 0.58) / 0.34), 1);
+  opacity: var(--t);
+  filter: blur(calc((1 - var(--t)) * 18px));
+  transform: translateY(calc((1 - var(--t)) * 48px)) scale(calc(0.96 + var(--t) * 0.04));
+  transform-origin: left bottom;
+  pointer-events: none;
 }
-.hero.is-revealed .hero__content { opacity: 1; pointer-events: auto; }
-.hero__trust {
-  font-weight: 700; font-size: 0.9375rem; color: var(--lime);
-  display: flex; align-items: center; gap: 6px; margin-bottom: 10px;
+.hero.is-revealed .hero__content { pointer-events: auto; }
+.hero__stage { --t: clamp(0, calc((var(--p, 0) - 0.58) / 0.34), 1); }
+.hero__trust { font-weight: 600; color: var(--lime); margin-bottom: 14px; }
+.hero__title {
+  display: flex; flex-direction: column; align-items: flex-start;
+  font: 400 clamp(4.25rem, 17vw, 15.5rem)/0.84 var(--display); font-style: italic;
+  text-transform: uppercase; letter-spacing: 0.005em;
+  text-shadow: 0 6px 40px rgba(0,0,0,.5);
 }
-.hero__title { font: 400 clamp(3.8rem, 15vw, 9.5rem)/0.85 var(--display); font-style: italic; text-transform: uppercase; }
-.hero__title span { display: block; }
-.hero__city { color: var(--green); }
-.hero__tagline { margin-top: 18px; font-size: clamp(1.0625rem, 2.5vw, 1.375rem); max-width: 34ch; color: var(--white); }
-.hero__actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 26px; }
-.hero .status--lg { margin-top: 20px; }
-
+.hero__city {
+  color: var(--green);
+  font-size: clamp(2.25rem, 7.5vw, 6.5rem); letter-spacing: 0.12em; line-height: 1.05;
+  padding-left: 0.08em;
+}
+.hero__tagline { color: var(--green); font-size: clamp(1.0625rem, 2vw, 1.375rem); font-weight: 500; max-width: 40ch; margin: 22px 0 18px; text-shadow: 0 0 2px #000, 0 1px 3px #000, 0 0 16px rgba(0,0,0,.95), 0 0 32px rgba(0,0,0,.8); }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+/* Scroll cue: a mouse with a moving wheel on desktop, rising chevrons on touch screens.
+   Clicking or tapping it plays the whole scroll for you. */
 .hero__cue {
-  position: absolute; left: 50%; bottom: max(18px, env(safe-area-inset-bottom)); translate: -50% 0;
-  display: flex; flex-direction: column; align-items: center; gap: 8px;
-  background: none; border: 0; cursor: pointer; color: var(--white);
-  opacity: .9; padding: 10px;
+  position: absolute; left: 50%; bottom: calc(var(--dock-h) + 26px); transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  padding: 10px 16px; border: 0; background: none; cursor: pointer;
+  font: 600 0.8125rem/1 var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--white);
+  text-shadow: 0 1px 8px rgba(0,0,0,.9);
+  opacity: clamp(0, calc(1 - var(--p, 0) * 8), 1);
+  transition: color .15s;
 }
-.hero__cue:hover .hero__cue-icon svg { translate: 0 4px; }
-.hero__cue-icon svg {
-  width: 34px; height: 34px;
-  animation: cue 2.1s ease-in-out infinite;
-  transition: translate .2s;
+.hero__cue:hover { color: var(--green); }
+.hero.is-scrolling .hero__cue { pointer-events: none; }
+.cue-icon { filter: drop-shadow(0 1px 6px rgba(0,0,0,.8)); }
+.cue-icon--mouse {
+  position: relative; width: 28px; height: 44px; border: 2px solid currentColor; border-radius: 14px;
 }
-@keyframes cue { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
-.hero__cue-text { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-300); }
-.hero.is-revealed .hero__cue { opacity: 0; pointer-events: none; }
+.cue-icon__wheel {
+  position: absolute; left: 50%; top: 8px; width: 4px; height: 9px; margin-left: -2px;
+  border-radius: 2px; background: var(--green);
+  animation: cue-wheel 1.8s cubic-bezier(.6, 0, .4, 1) infinite;
+}
+@keyframes cue-wheel {
+  0% { transform: translateY(0); opacity: 0; }
+  20% { opacity: 1; }
+  70% { transform: translateY(14px); opacity: 0; }
+  100% { transform: translateY(14px); opacity: 0; }
+}
+.cue-icon--swipe { display: none; flex-direction: column; align-items: center; }
+.cue-icon--swipe svg { width: 30px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; margin-top: -8px; animation: cue-chevron 1.6s ease-in-out infinite; }
+.cue-icon--swipe svg:first-child { stroke: var(--green); animation-delay: .2s; }
+@keyframes cue-chevron {
+  0%, 100% { transform: translateY(6px); opacity: .25; }
+  50% { transform: translateY(-4px); opacity: 1; }
+}
+.hero__cue-text--swipe { display: none; }
+@media (hover: none), (pointer: coarse) {
+  .cue-icon--mouse, .hero__cue-text--mouse { display: none; }
+  .cue-icon--swipe { display: flex; }
+  .hero__cue-text--swipe { display: inline; }
+}
+@media (max-width: 899px) {
+  .hero { height: 260vh; }
+  .hero__content { bottom: max(11vh, 84px); }
+  .hero__actions .btn { flex: 1 1 100%; }
+}
 
 /* ---------- Marquee ---------- */
 .marquee {
@@ -497,7 +535,12 @@ html:not(.age-ok) body { overflow: hidden; }
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .hero { height: 100vh; }
-  .hero__cue-icon svg { animation: none; }
+  .marquee__track { animation: none; }
+  .sheet { transition: none; }
+  .hero { height: 100vh; --p: 1; }
+  .hero__idle, .hero__cue { display: none; }
+  .cue-icon__wheel { animation: none; }
+  .hero__content, .hero__stage { --t: 1; }
+  .hero__content { filter: none; transform: none; pointer-events: auto; }
   * { transition-duration: 0.01ms !important; }
 }
